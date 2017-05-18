@@ -23,3 +23,5 @@ Usually you get one pf particle associated with a muon and one with a proton.
 Shower from second photon is missing 41% of the cases
 
 Handling multiple drift volumes as a single instance is a big step forward for Pandora
+
+## Shower Performance reconstruction studies
