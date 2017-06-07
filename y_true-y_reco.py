@@ -1,15 +1,13 @@
-from ROOT import *
+import ROOT as root
 
-# gROOT.Reset()
-# gSystem.Load("dunendtf")
-# c1 = TCanvas( 'yComparison', 'yComparison', 200, 10, 700, 500 )
-
-f = TFile.Open("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_gar.dst.root")
+f = root.TFile.Open("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_gar.dst.root")
 tree = f.Get("dune_dst")
-tree.Draw("y_reco:y_true")
-#tree.Draw("Y_reco")
+# tree.Draw("y_reco:y_true")
+# tree.Draw("y_reco")
 
-#for event in f.dune_dst:
-#    print event.y_reco
+for entry in tree:
+     # Now you have acess to the leaves/branches of each entry in the tree, e.g.
+    #  events = entry.events
+    print "a"
 
-gApplication.Run()
+root.gApplication.Run()
