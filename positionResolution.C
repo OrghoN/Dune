@@ -1,17 +1,32 @@
-void readTree(){
-        TFile *input = new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_fgt.dst.root","READ");
-        // TTree *tree = (TTree*)input->Get("dune_dst");
+void positionResolution(){
 
-        TH1F *myHist = new TH1F("h1","ntuple",100,-4,4);
+// open files
+        vector<TFile *> files {new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_fgt.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nu_fgt.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_gar.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nu_gar.dst.root","READ")};
 
-        TTreeReader reader("dune_dst", input);
+        vector<TH1F *> difference {new TH1F("nubar_fgt_dif","y_true-y_reco",100,0,1), new TH1F("nu_fgt_dif","y_true-y_reco",100,0,1), new TH1F("nubar_gar_dif","y_true-y_reco",100,0,1), new TH1F("nu_gar_dif","y_true-y_reco",100,0,1)};
+        vector<TH1F *> division {new TH1F("nubar_fgt_div","y_true-y_reco",100,0,1), new TH1F("nu_fgt_div","y_true-y_reco",100,0,1), new TH1F("nubar_gar_div","y_true-y_reco",100,0,1), new TH1F("nu_gar_div","y_true-y_reco",100,0,1)};
+        vector<TH1F *> y_true {new TH1F("nubar_fgt_y_true","y_true-y_reco",100,0,1), new TH1F("nu_fgt_y_true","y_true-y_reco",100,0,1), new TH1F("nubar_gar_y_true","y_true-y_reco",100,0,1), new TH1F("nu_gar_y_true","y_true-y_reco",100,0,1)};
+        vector<TH1F *> y_reco {new TH1F("nubar_fgt_y_reco","y_true-y_reco",100,0,1), new TH1F("nu_fgt_y_reco","y_true-y_reco",100,0,1), new TH1F("nubar_gar_y_reco","y_true-y_reco",100,0,1), new TH1F("nu_gar_y_reco","y_true-y_reco",100,0,1)};
 
-        TTreeReaderValue<Float_t> y_true(reader, "y_true");
-        TTreeReaderValue<Float_t> y_reco(reader, "y_reco");
+        TFile *output = new TFile("/dune/data/users/oneogi/positionResolution.root","NEW");
 
-        while (reader.Next()) {
-                myHist->Fill(*y_true - *y_reco);
+        for (size_t i = 0; i < files.size(); i++) {
+        // for (size_t i = 0; i < 1; i++) {
+                TTreeReader reader("dune_dst", files[i]);
+
+                TTreeReaderValue<Float_t> y_true(reader, "y_true");
+                TTreeReaderValue<Float_t> y_reco(reader, "y_reco");
+
+                while (reader.Next()) {
+                        difference[i]->Fill(*y_true - *y_reco);
+                        division[i]->Fill(*y_true / *y_reco);
+                        y_true[i]->Fill(*y_true);
+                        y_reco[i]->Fill(*y_reco);
+                }
+
+                difference[i]->Write();
+                division[i]->Write();
+                y_true[i]->Write();
+                y_reco[i]->Write();
         }
-
-        myHist->Draw();
 }
