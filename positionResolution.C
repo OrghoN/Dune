@@ -4,17 +4,17 @@ void positionResolution(){
         vector<TFile *> files {new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_fgt.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nu_fgt.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nubar_gar.dst.root","READ"),new TFile("/pnfs/dune/persistent/TaskForce_AnaTree/ndtf_output/4th_run/ndtf_output_nu_gar.dst.root","READ")};
 
         //create histograms
-        vector<TH1F *> differenceX {new TH1F("nubar_fgt_difX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nu_fgt_difX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nubar_gar_difX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nu_gar_difX","trueVtxX-recoVtxX",100,-200,200)};
-        vector<TH1F *> divisionX {new TH1F("nubar_fgt_divX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nu_fgt_divX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nubar_gar_divX","trueVtxX-recoVtxX",100,-200,200), new TH1F("nu_gar_divX","trueVtxX-recoVtxX",100,-200,200)};
+        vector<TH1F *> differenceX {new TH1F("nubar_fgt_difX","trueVtxX-recoVtxX",100,0,4), new TH1F("nu_fgt_difX","trueVtxX-recoVtxX",100,0,4), new TH1F("nubar_gar_difX","trueVtxX-recoVtxX",100,0,4), new TH1F("nu_gar_difX","trueVtxX-recoVtxX",100,0,4)};
+        vector<TH1F *> divisionX {new TH1F("nubar_fgt_divX","trueVtxX-recoVtxX",100,0,4), new TH1F("nu_fgt_divX","trueVtxX-recoVtxX",100,0,4), new TH1F("nubar_gar_divX","trueVtxX-recoVtxX",100,0,4), new TH1F("nu_gar_divX","trueVtxX-recoVtxX",100,0,4)};
 
-        vector<TH1F *> differenceY {new TH1F("nubar_fgt_difY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nu_fgt_difY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nubar_gar_difY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nu_gar_difY","trueVtxY-recoVtxY",100,-200,200)};
-        vector<TH1F *> divisionY {new TH1F("nubar_fgt_divY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nu_fgt_divY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nubar_gar_divY","trueVtxY-recoVtxY",100,-200,200), new TH1F("nu_gar_divY","trueVtxY-recoVtxY",100,-200,200)};
+        vector<TH1F *> differenceY {new TH1F("nubar_fgt_difY","trueVtxY-recoVtxY",100,0,4), new TH1F("nu_fgt_difY","trueVtxY-recoVtxY",100,0,4), new TH1F("nubar_gar_difY","trueVtxY-recoVtxY",100,0,4), new TH1F("nu_gar_difY","trueVtxY-recoVtxY",100,0,4)};
+        vector<TH1F *> divisionY {new TH1F("nubar_fgt_divY","trueVtxY-recoVtxY",100,0,4), new TH1F("nu_fgt_divY","trueVtxY-recoVtxY",100,0,4), new TH1F("nubar_gar_divY","trueVtxY-recoVtxY",100,0,4), new TH1F("nu_gar_divY","trueVtxY-recoVtxY",100,0,4)};
 
-        vector<TH1F *> differenceZ {new TH1F("nubar_fgt_difZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nu_fgt_difZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nubar_gar_difZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nu_gar_difZ","trueVtxZ-recoVtxZ",100,200,900)};
-        vector<TH1F *> divisionZ {new TH1F("nubar_fgt_divZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nu_fgt_divZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nubar_gar_divZ","trueVtxZ-recoVtxZ",100,200,900), new TH1F("nu_gar_divZ","trueVtxZ-recoVtxZ",100,200,900)};
+        vector<TH1F *> differenceZ {new TH1F("nubar_fgt_difZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nu_fgt_difZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nubar_gar_difZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nu_gar_difZ","trueVtxZ-recoVtxZ",100,0,4)};
+        vector<TH1F *> divisionZ {new TH1F("nubar_fgt_divZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nu_fgt_divZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nubar_gar_divZ","trueVtxZ-recoVtxZ",100,0,4), new TH1F("nu_gar_divZ","trueVtxZ-recoVtxZ",100,0,4)};
 
-        vector<TH1F *> differenceE {new TH1F("nubar_fgt_difE","Ev-EV_reco",100,0,20), new TH1F("nu_fgt_difE","Ev-EV_reco",100,0,20), new TH1F("nubar_gar_difE","Ev-EV_reco",100,0,20), new TH1F("nu_gar_difE","Ev-EV_reco",100,0,20)};
-        vector<TH1F *> divisionE {new TH1F("nubar_fgt_divE","Ev-EV_reco",100,0,20), new TH1F("nu_fgt_divE","Ev-EV_reco",100,0,20), new TH1F("nubar_gar_divE","Ev-EV_reco",100,0,20), new TH1F("nu_gar_divE","Ev-EV_reco",100,0,20)};
+        vector<TH1F *> differenceE {new TH1F("nubar_fgt_difE","Ev-EV_reco",100,0,6), new TH1F("nu_fgt_difE","Ev-EV_reco",100,0,6), new TH1F("nubar_gar_difE","Ev-EV_reco",100,0,6), new TH1F("nu_gar_difE","Ev-EV_reco",100,0,6)};
+        vector<TH1F *> divisionE {new TH1F("nubar_fgt_divE","Ev-EV_reco",100,0,6), new TH1F("nu_fgt_divE","Ev-EV_reco",100,0,6), new TH1F("nubar_gar_divE","Ev-EV_reco",100,0,6), new TH1F("nu_gar_divE","Ev-EV_reco",100,0,6)};
 
         //create output file
         TFile *output = new TFile("/dune/data/users/oneogi/positionResolution.root","RECREATE");
