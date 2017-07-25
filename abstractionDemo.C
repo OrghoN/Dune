@@ -24,6 +24,7 @@ void abstractionDemo(){
 
   //statistics positions
   vector<vector <Double_t>> statPositions {{0.78,0.584735,0.98,0.743855}, {0.78,0.775,0.98,0.935}, {0.620301, 0.15065, 0.820802, 0.307891}};
+
   Double_t zoom[] ={0,100};
 
   //create canvas

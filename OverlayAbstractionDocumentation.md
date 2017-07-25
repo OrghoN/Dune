@@ -36,7 +36,7 @@ As to how the function works, the full function uses the following parameters in
 
 **files** - *vector<TFile \*\>* - A vector containing the list of files that the graphs are to be drawn from. Each file corresponds to the path in the same index.
 
-**paths** - *vector<TString\>* - A vector containing the list of paths that the graphs are to be drawn from. Each path should start from the root o the folder sturcture in the relevant file and go down to the variable.
+**paths** - *vector<TString\>* - A vector containing the list of paths that the graphs are to be drawn from. Each path should start from the root of the folder sturcture in the relevant file and go down to the variable.
 
 **colors** - *vector<Color_t\>* - A vector containing the list of the colors that the graphs are to be drawn in
 
