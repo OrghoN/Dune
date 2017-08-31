@@ -41,7 +41,7 @@ void positionResolution(){
                 //loop over ntuples
                 while (reader.Next()) {
 
-                        if (!(Ev ==0 || Ev_reco==0)) {
+                        if (!(Ev <= 0 || Ev_reco <= 0)) {
                                 differenceX[i]->Fill(*trueVtxX - *recoVtxX);
                                 divisionX[i]->Fill(*recoVtxX / *trueVtxX);
 
