@@ -17,7 +17,7 @@ void positionResolution(){
         vector<TH1F *> divisionE {new TH1F("nubar_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nu_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nubar_gar_divE","Ev-EV_reco",100,0,2), new TH1F("nu_gar_divE","Ev-EV_reco",100,0,2)};
 
         //create output file
-        TFile *output = new TFile("/dune/data/users/oneogi/positionResolution.root","RECREATE");
+        TFile *output = new TFile("/dune/data/users/oneogi/positionResolutionNoZero.root","RECREATE");
 
         //loop over files
         for (size_t i = 0; i < files.size(); i++) {
@@ -40,17 +40,20 @@ void positionResolution(){
 
                 //loop over ntuples
                 while (reader.Next()) {
-                        differenceX[i]->Fill(*trueVtxX - *recoVtxX);
-                        divisionX[i]->Fill(*recoVtxX / *trueVtxX);
 
-                        differenceY[i]->Fill(*trueVtxY - *recoVtxY);
-                        divisionY[i]->Fill(*recoVtxY / *trueVtxY);
+                        if (!(Ev ==0 || Ev_reco==0)) {
+                                differenceX[i]->Fill(*trueVtxX - *recoVtxX);
+                                divisionX[i]->Fill(*recoVtxX / *trueVtxX);
 
-                        differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
-                        divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
+                                differenceY[i]->Fill(*trueVtxY - *recoVtxY);
+                                divisionY[i]->Fill(*recoVtxY / *trueVtxY);
 
-                        differenceE[i]->Fill(*Ev - *Ev_reco);
-                        divisionE[i]->Fill(*Ev_reco / *Ev);
+                                differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
+                                divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
+
+                                differenceE[i]->Fill(*Ev - *Ev_reco);
+                                divisionE[i]->Fill(*Ev_reco / *Ev);
+                        }
 
                 }
 

@@ -15,7 +15,7 @@ void energyResolution(){
         //style choices
         vector<Color_t> colors {kBlue, kRed};
         vector<Width_t> lineWidths {4, 4};
-        vector<Style_t> lineStyles {1,1};
+        vector<Style_t> lineStyles {2,2};
 
         //legend
         vector<TString> legendEntries {"Fine Grained Tracker", "Gas Argon"};

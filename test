@@ -1,0 +1,100 @@
+root [0] 
+Processing energyResolution.C...
+Warning in <TFile::Init>: file ./positionResolution.root probably not closed, trying to recover
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_difX at address 290
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_divX at address 613
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_difY at address 938
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_divY at address 1261
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_difZ at address 1581
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_divZ at address 1898
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_difE at address 2214
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_fgt_divE at address 2877
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_difX at address 3528
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_divX at address 3851
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_difY at address 4161
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_divY at address 4484
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_difZ at address 4798
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_divZ at address 5109
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_difE at address 5419
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_fgt_divE at address 6084
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_difX at address 6738
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_divX at address 7053
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_difY at address 7366
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_divY at address 7681
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_difZ at address 7994
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_divZ at address 8309
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_difE at address 8622
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nubar_gar_divE at address 9211
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_difX at address 9801
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_divX at address 10111
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_difY at address 10420
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_divY at address 10730
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_difZ at address 11039
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_divZ at address 11349
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_difE at address 11658
+Info in <TFile::Recover>: ./positionResolution.root, recovered key TH1F:nu_gar_divE at address 12263
+Warning in <TFile::Init>: successfully recovered 32 keys
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=947573 FROM MIGRAD    STATUS=CALL LIMIT   1355 CALLS        1356 TOTAL
+                     EDM=1242.18    STRATEGY= 1  ERROR MATRIX UNCERTAINTY  17.4 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     5.72961e+03   2.70798e+01   6.09662e+02  -1.51813e+01
+   2  Mean        -2.37244e+01   2.07629e-02  -1.58019e-01  -8.51945e+04
+   3  Sigma        4.85570e+00   3.65819e-03   2.04024e-03  -2.07513e+06
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=31361.7 FROM MIGRAD    STATUS=CALL LIMIT   1348 CALLS        1349 TOTAL
+                     EDM=18.9295    STRATEGY= 1  ERROR MATRIX UNCERTAINTY  13.9 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.72062e+02   4.43002e+00   1.43284e+01  -1.74994e+01
+   2  Mean        -2.06918e+01   1.32697e-01  -3.63033e-01  -2.44290e+03
+   3  Sigma        4.97980e+00   2.67422e-02  -1.18931e-02   5.34975e+04
+Info in <TCanvas::Print>: file ./nuBar.png has been created
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=1.03532e+06 FROM MIGRAD    STATUS=CALL LIMIT   1352 CALLS        1353 TOTAL
+                     EDM=231.129    STRATEGY= 1  ERROR MATRIX UNCERTAINTY  45.7 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     5.71591e+03   5.16096e+01   2.78879e+02  -5.00620e+00
+   2  Mean        -2.50390e+01   2.51010e-02  -1.42972e-01  -2.31396e+04
+   3  Sigma        5.11842e+00   3.55307e-03   3.85020e-03  -5.49768e+05
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=36463.6 FROM MIGRAD    STATUS=CALL LIMIT   1351 CALLS        1352 TOTAL
+                     EDM=5.37428    STRATEGY= 1  ERROR MATRIX UNCERTAINTY  27.4 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     5.62487e+02   1.46948e+01   1.67139e+01  -3.62923e+00
+   2  Mean        -2.61319e+01   8.95006e-02   1.01654e-01  -1.49804e+03
+   3  Sigma        5.89090e+00   1.50751e-02  -6.21458e-03  -3.41983e+04
+Info in <TCanvas::Print>: file ./nu.png has been created
+ FCN=3.8251e+06 FROM MIGRAD    STATUS=CONVERGED     191 CALLS         192 TOTAL
+                     EDM=9.62431e-09    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   1.8 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     4.52711e-02   2.78301e-05  -6.14156e-08   1.91546e+00
+   2  Mean         9.01712e-01   5.88475e-05   4.45032e-07   4.02348e+00
+   3  Sigma        1.14884e-01   5.58511e-05  -5.13021e-07   1.62794e+00
+ FCN=114376 FROM MIGRAD    STATUS=CONVERGED     169 CALLS         170 TOTAL
+                     EDM=3.16658e-09    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.44291e-02   1.52301e-04   1.29003e-05   2.59363e-01
+   2  Mean         9.14785e-01   4.37976e-04   5.46524e-05  -2.19667e-03
+   3  Sigma        1.45859e-01   5.53478e-04   5.90444e-05  -5.72459e-02
+Info in <TCanvas::Print>: file ./nuBar.png has been created
+ FCN=5.08636e+06 FROM MIGRAD    STATUS=CONVERGED     150 CALLS         151 TOTAL
+                     EDM=2.28751e-08    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   2.5 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     3.54859e-02   2.84851e-05  -2.64335e-08   2.11818e+01
+   2  Mean         9.09933e-01   8.20144e-05  -1.29509e-07  -1.25476e+00
+   3  Sigma        1.44741e-01   1.05351e-04   2.41796e-07   3.67538e+00
+ FCN=218518 FROM MIGRAD    STATUS=CONVERGED     100 CALLS         101 TOTAL
+                     EDM=1.90571e-07    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Constant     1.96796e-02   6.04117e-05   6.08291e-06  -5.89931e+00
+   2  Mean         8.86675e-01   6.66438e-04   9.01245e-05  -1.32507e+00
+   3  Sigma        2.89787e-01   8.09690e-04   6.91645e-05  -1.64528e+00
+Info in <TCanvas::Print>: file ./nu.png has been created

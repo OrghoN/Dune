@@ -63,6 +63,9 @@ void DrawOverlay(TCanvas *Canvas, Int_t pad, bool isZoomed,  Double_t zoomRange[
       graphs[i]->Draw("SAMES");
     }
 
+    //fit
+    // graphs[i]->Fit("gaus", "I+", "SAME");
+
     gPad->Modified();
     gPad->Update();
 
@@ -102,6 +105,7 @@ void DrawOverlay(TCanvas *Canvas, Int_t pad, bool isZoomed,  Double_t zoomRange[
   // graphs[0]->GetXaxis()->SetRangeUser(0,100);
 
   gStyle->SetOptStat(statStyles);
+  // gStyle->SetOptFit();
 
   if (isLogScale) {
     gPad->SetLogy();
