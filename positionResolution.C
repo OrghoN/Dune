@@ -15,6 +15,7 @@ void positionResolution(){
 
         vector<TH1F *> differenceE {new TH1F("nubar_fgt_difE","Ev-EV_reco",100,0,4), new TH1F("nu_fgt_difE","Ev-EV_reco",100,0,4), new TH1F("nubar_gar_difE","Ev-EV_reco",100,0,4), new TH1F("nu_gar_difE","Ev-EV_reco",100,0,4)};
         vector<TH1F *> divisionE {new TH1F("nubar_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nu_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nubar_gar_divE","Ev-EV_reco",100,0,2), new TH1F("nu_gar_divE","Ev-EV_reco",100,0,2)};
+        vector<TH1F *> Test {new TH1F("test_nubar_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("test_nu_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("test_nubar_gar_divE","Ev-EV_reco",100,0,2), new TH1F("test_nu_gar_divE","Ev-EV_reco",100,0,2)};
 
         //create output file
         TFile *output = new TFile("/dune/data/users/oneogi/positionResolutionEdgeDistCut.root","RECREATE");
@@ -52,11 +53,11 @@ void positionResolution(){
                         differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
                         divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
 
-                        float * distCut = 0.015;
+                        // float * distCut = 0.015;
 
-                        cout << (Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= distCut) << "\n";
+                        // cout << (*Ev.Get() <= 0 || *Ev_reco.Get() <= 0 || *trueDistToEdge.Get() >= distCut) << "\n";
 
-                        if (!(Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= distCut)) {
+                        if (!(*Ev <= 0 || *Ev_reco <= 0 || *trueDistToEdge>0.015) {
                                 differenceE[i]->Fill(*Ev - *Ev_reco);
                                 divisionE[i]->Fill(*Ev_reco / *Ev);
                         }
