@@ -17,7 +17,7 @@ void positionResolution(){
         vector<TH1F *> divisionE {new TH1F("nubar_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nu_fgt_divE","Ev-EV_reco",100,0,2), new TH1F("nubar_gar_divE","Ev-EV_reco",100,0,2), new TH1F("nu_gar_divE","Ev-EV_reco",100,0,2)};
 
         //create output file
-        TFile *output = new TFile("/dune/data/users/oneogi/positionResolutionNoZero.root","RECREATE");
+        TFile *output = new TFile("/dune/data/users/oneogi/positionResolutionEdgeDistCut.root","RECREATE");
 
         //loop over files
         for (size_t i = 0; i < files.size(); i++) {
@@ -36,21 +36,25 @@ void positionResolution(){
                 TTreeReaderValue<Float_t> trueVtxZ(reader, "trueVtxZ");
                 TTreeReaderValue<Float_t> recoVtxZ(reader, "recoVtxZ");
 
+                TTreeReaderValue<Float_t> trueDistToEdge(reader, "trueDistToEdge");
+
                 // cout << "file" << 1 << endl;
 
                 //loop over ntuples
                 while (reader.Next()) {
 
-                        if (!(Ev.Get() <= 0 || Ev_reco.Get() <= 0)) {
-                                differenceX[i]->Fill(*trueVtxX - *recoVtxX);
-                                divisionX[i]->Fill(*recoVtxX / *trueVtxX);
+                        differenceX[i]->Fill(*trueVtxX - *recoVtxX);
+                        divisionX[i]->Fill(*recoVtxX / *trueVtxX);
 
-                                differenceY[i]->Fill(*trueVtxY - *recoVtxY);
-                                divisionY[i]->Fill(*recoVtxY / *trueVtxY);
+                        differenceY[i]->Fill(*trueVtxY - *recoVtxY);
+                        divisionY[i]->Fill(*recoVtxY / *trueVtxY);
 
-                                differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
-                                divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
+                        differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
+                        divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
 
+                        cout << (Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= 0.015) << "\n";
+
+                        if (!(Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= 0.015)) {
                                 differenceE[i]->Fill(*Ev - *Ev_reco);
                                 divisionE[i]->Fill(*Ev_reco / *Ev);
                         }

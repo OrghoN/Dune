@@ -40,7 +40,6 @@ void energyResolution(){
         nuBarCanvas->Divide(2,1);
         nuCanvas->Divide(2,1);
 
-
         //actual Draw Calls
         DrawOverlay(nuBarCanvas, 1, false, zoom, true, false, files, nubarDifPath, colors, lineWidths, lineStyles, legendEntries, nuBarDifTitles, statPositions, 1111, legendDif, "nuBar");
         DrawOverlay(nuCanvas, 1, false, zoom, true, false, files, nuDifPath, colors, lineWidths, lineStyles, legendEntries, nuDifTitles, statPositions, 1111, legendDif, "nu");
