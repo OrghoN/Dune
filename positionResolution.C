@@ -52,9 +52,11 @@ void positionResolution(){
                         differenceZ[i]->Fill(*trueVtxZ - *recoVtxZ);
                         divisionZ[i]->Fill(*recoVtxZ / *trueVtxZ);
 
-                        cout << (Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= 0.015) << "\n";
+                        float * distCut = 0.015;
 
-                        if (!(Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= 0.015)) {
+                        cout << (Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= distCut) << "\n";
+
+                        if (!(Ev.Get() <= 0 || Ev_reco.Get() <= 0 || trueDistToEdge.Get() >= distCut)) {
                                 differenceE[i]->Fill(*Ev - *Ev_reco);
                                 divisionE[i]->Fill(*Ev_reco / *Ev);
                         }
